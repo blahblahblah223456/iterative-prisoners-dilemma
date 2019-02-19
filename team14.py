@@ -6,9 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'Dreher' # Only 10 chars displayed.
+team_name = 'Dreher Team' # Only 10 chars displayed.
 strategy_name = 'Always Betray'
-strategy_description = 'How does this strategy decide?'
+strategy_description = 'To Always Betray'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
