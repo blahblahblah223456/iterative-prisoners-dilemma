@@ -6,10 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-
-team_name = 'Testing Team' # Only 10 chars displayed.
-strategy_name = 'Always Betray'
-strategy_description = 'To Always Betray'
+team_name = 'Anonymous' # Only 10 chars displayed.
+strategy_name = 'Its a secret'
+strategy_description = 'To be unknown'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -27,7 +26,14 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'b'
+     
+    if their_history[-1] == 'b':
+        return 'b'
+    else:
+        if their_history[-1] == 'c':
+            return 'c'
+        else:
+            return 'b'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
@@ -56,7 +62,7 @@ if __name__ == '__main__':
               result='b'):
          print 'Test passed'
      # Test 2: Continue betraying if they collude despite being betrayed.
-    test_move(my_history='bbb',
+    if test_move(my_history='bbb',
               their_history='ccc', 
               # Note the scores are for testing move().
               # The history and scores don't need to match unless
@@ -66,4 +72,5 @@ if __name__ == '__main__':
               # move('bbb', 'ccc', 0, 0) returns 'b'.
               my_score=0, 
               their_score=0,
-              result='b')             
+              result='b'):
+         print 'Test passed'
